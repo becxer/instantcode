@@ -12,4 +12,10 @@ you can just convert code instantly like below.
 
 
 ### how to install
+#### in window
 
+        1) clone this project or download.zip ( & unzip)
+        2) right click instantcode.bat
+        3) make shortcut on desktop
+        4) right click shortcut of instantcode.bat
+        5) set keyboard shortcut to 'ctrl+alt+P' (& hide also)
