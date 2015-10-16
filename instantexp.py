@@ -1,6 +1,6 @@
 #-*- coding : utf-8 -*-
 # 
-# usage : run the code which is in the clipboard and put result to clipboard
+# usage : run the expression which is in the clipboard and put result to clipboard
 # 
 # @author : becxer87
 # @email : becxer87@gmail.com
@@ -38,8 +38,8 @@ ini_f.close()
 interpreted = 'Error'
 if lang == 'python':
 	interpreted = eval(src)
-	print "result : " + str(interpreted)
 
+print "result : " + str(interpreted)
 root.clipboard_clear()
 root.clipboard_append(interpreted)
 root.destroy()
