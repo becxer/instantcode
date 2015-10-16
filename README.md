@@ -3,6 +3,7 @@ Run the code which is in the clipboard and put result into clipboard
 
 
 ### 1. how to use this
+
 after setting keyboard shortcut for batch file, 
 you can just convert code instantly like below.
 
@@ -12,7 +13,8 @@ you can just convert code instantly like below.
 
 
 ### 2. how to install
-#### in window
+
+#### --in window
 
         1) clone this project or download.zip ( & unzip)
         2) right click instantcode.bat
