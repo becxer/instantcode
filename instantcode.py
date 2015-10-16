@@ -9,6 +9,8 @@
 from Tkinter import Tk
 import sys
 import os
+import math
+import random
 
 #get encoding
 enc = sys.getdefaultencoding()
