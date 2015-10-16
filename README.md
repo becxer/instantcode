@@ -1,5 +1,5 @@
 # instantcode
-Run the code which is in clipboard and put result to clipboard
+Run the code which is in the clipboard and put result into clipboard
 
 
 ### how to use this
@@ -12,3 +12,4 @@ you can just convert code instantly like below.
 
 
 ### how to install
+
