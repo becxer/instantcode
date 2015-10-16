@@ -17,7 +17,7 @@ you can just convert code instantly like below.
 #### --in window
 
         1) clone this project or download.zip ( & unzip)
-        2) right click instant*.py
+        2) right click instantcode.py
         3) make shortcut on desktop
-        4) right click shortcut of instant*.py
+        4) right click shortcut of instantcode.py
         5) set keyboard shortcut to '(your shortcut)' & hide icon also
