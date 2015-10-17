@@ -22,6 +22,7 @@ try these sample code : https://wiki.python.org/moin/SimplePrograms
         3) install visual_studio (https://www.visualstudio.com/)
         4) append cl.exe's path into environment path
         5) install nodejs (https://nodejs.org/en/download/)
+        6) install ruby (https://www.ruby-lang.org/)
 
 ### 3. how to install shortcut
 
@@ -41,3 +42,4 @@ Just fix instantcode.ini with supported option below
         win-cpp
         win-c
         nodejs
+        ruby
