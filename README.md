@@ -15,7 +15,7 @@ try these sample code : https://wiki.python.org/moin/SimplePrograms
 
 ### 2. how to pre-setting OS environment
 
-#### --in window
+#### in window
 
         1) install python2.7.x (https://www.python.org/downloads/)
         2) append python.exe's path into environment path
@@ -24,7 +24,7 @@ try these sample code : https://wiki.python.org/moin/SimplePrograms
 
 ### 3. how to install shortcut
 
-#### --in window
+#### in window
 
         1) clone this project or download.zip ( & unzip)
         2) right click instantcode.py
