@@ -64,6 +64,10 @@ import os
 import math
 import random
 '''
+essential_nodelib = u'''
+var fs = require('fs')
+'''
+
 src_fname = "instantcode.src"
 interpreted = 'Error'
 if lang == 'python':
@@ -72,6 +76,12 @@ if lang == 'python':
         src_f.write(src)
         src_f.close()
         interpreted = run_cmd('python ' + src_fname).decode(enc)
+elif lang == 'nodejs' or lang == 'node':
+        src_f = codecs.open(src_fname,"w","utf-8")
+        src_f.write(essential_nodelib)
+        src_f.write(src)
+        src_f.close()
+        interpreted = run_cmd('node ' + src_fname).decode(enc)
 elif lang == 'win-cpp' or lang == 'win-c' :
 	win_fname = src_fname + '.'+lang.split('-')[1]
 	src_f = codecs.open(win_fname,'w','utf-8')
