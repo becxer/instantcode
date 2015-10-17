@@ -67,6 +67,8 @@ import random
 essential_nodelib = u'''
 var fs = require('fs')
 '''
+essential_rblib = u'''
+'''
 
 src_fname = "instantcode.src"
 interpreted = 'Error'
@@ -82,6 +84,12 @@ elif lang == 'nodejs' or lang == 'node':
         src_f.write(src)
         src_f.close()
         interpreted = run_cmd('node ' + src_fname).decode(enc)
+elif lang == 'ruby' :
+        src_f = codecs.open(src_fname,"w","utf-8")
+        src_f.write(essential_rblib)
+        src_f.write(src)
+        src_f.close()
+        interpreted = run_cmd('ruby ' + src_fname).decode(enc)
 elif lang == 'win-cpp' or lang == 'win-c' :
 	win_fname = src_fname + '.'+lang.split('-')[1]
 	src_f = codecs.open(win_fname,'w','utf-8')
