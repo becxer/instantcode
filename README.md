@@ -13,7 +13,14 @@ you can just convert code instantly like below.
 
 try these sample code : https://wiki.python.org/moin/SimplePrograms
 
-### 2. how to install
+### 2. how to pre-setting OS environment
+
+#### --in window
+
+        1) download python2.7.x (https://www.python.org/downloads/) and append python.exe's path into environment path
+        2) download visual_studio and append cl.exe's path into environment path
+
+### 3. how to install shortcut
 
 #### --in window
 
