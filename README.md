@@ -9,7 +9,7 @@ you can just convert code instantly like below.
 
         [ ctrl+c ]  #put your code to clipboard 
         [ (your shorcut) ]  # convert your code to result
-        [ ctrl+v ]  #paste your result  
+        [ ctrl+v ]  #paste your code result  
 
 try these sample code : https://wiki.python.org/moin/SimplePrograms
 
