@@ -17,11 +17,18 @@ try these sample code : https://wiki.python.org/moin/SimplePrograms
 
 #### window
 
+        if want to use python
         1) install python2.7.x (https://www.python.org/downloads/)
         2) append python.exe's path into environment path
-        3) install visual_studio (https://www.visualstudio.com/)
-        4) append cl.exe's path into environment path
+        
+        if want to use win-c & win-cpp
+        1) install visual_studio (https://www.visualstudio.com/)
+        2) append cl.exe's path into environment path
+        
+        if want to use nodejs
         5) install nodejs (https://nodejs.org/en/download/)
+        
+        if want to use ruby
         6) install ruby (https://www.ruby-lang.org/)
 
 ### 3. how to install shortcut
@@ -30,7 +37,7 @@ try these sample code : https://wiki.python.org/moin/SimplePrograms
 
         1) clone this project or download.zip ( & unzip)
         2) right click instantcode.py
-        3) make shortcut on desktop
+        3) make shortcut of instantcode.py on desktop
         4) right click shortcut of instantcode.py
         5) set keyboard shortcut to '(your shortcut)' & hide icon also
 
