@@ -21,6 +21,7 @@ try these sample code : https://wiki.python.org/moin/SimplePrograms
         2) append python.exe's path into environment path
         3) install visual_studio (https://www.visualstudio.com/)
         4) append cl.exe's path into environment path
+        5) install nodejs (https://nodejs.org/en/download/)
 
 ### 3. how to install shortcut
 
@@ -39,3 +40,4 @@ Just fix instantcode.ini with supported option below
         python
         win-cpp
         win-c
+        nodejs
