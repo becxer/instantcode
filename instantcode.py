@@ -5,7 +5,6 @@
 # @author : becxer87
 # @email : becxer87@gmail.com
 #
-
 from Tkinter import Tk
 import sys
 import os
@@ -27,20 +26,6 @@ if type(src).__name__ != 'unicode':
 print "______________________________________________"
 print src
 print "______________________________________________"
-
-#write source to tmp file
-essential_lib = u'''
-#-*- coding=utf-8 -*-
-import sys
-import os
-import math
-import random
-'''
-src_fname = "instantcode.src"
-src_f = codecs.open(src_fname,"w","utf-8")
-src_f.write(essential_lib)
-src_f.write(src)
-src_f.close()
 
 #run command in shell
 def run_cmd(bashCmd):
@@ -71,11 +56,30 @@ except IOError as e:
 lang = ini_f.read().strip()
 ini_f.close()
 
-#interpret source file
+#write source to tmp file & interpret source file
+essential_pylib = u'''
+#-*- coding=utf-8 -*-
+import sys
+import os
+import math
+import random
+'''
+src_fname = "instantcode.src"
 interpreted = 'Error'
 if lang == 'python':
+        src_f = codecs.open(src_fname,"w","utf-8")
+        src_f.write(essential_pylib)
+        src_f.write(src)
+        src_f.close()
         interpreted = run_cmd('python ' + src_fname).decode(enc)
-
+elif lang == 'win-cpp' or lang == 'win-c' :
+	win_fname = src_fname + '.'+lang.split('-')[1]
+	src_f = codecs.open(win_fname,'w','utf-8')
+	src_f.write(src)
+	src_f.close()
+	print run_cmd('vcvars32 & cl ' + win_fname)
+	interpreted = run_cmd(src_fname+'.exe').decode(enc)
+	
 #put result to clipboard
 print "______________________________________________"
 print interpreted
