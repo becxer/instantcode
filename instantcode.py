@@ -10,6 +10,8 @@ import sys
 import os
 import subprocess
 import codecs
+import time
+import threading
 
 #get encoding
 reload(sys)
@@ -103,4 +105,20 @@ print "______________________________________________"
 print interpreted
 root.clipboard_clear()
 root.clipboard_append(interpreted)
-root.destroy()
+
+from sys import platform as _platform
+
+def exit_after(sec):
+	for i in xrange(0,sec):
+		print "exit() after " + str(sec - i) + " sec"
+		time.sleep(1)
+	os._exit(5)
+
+if _platform == "darwin":
+# MAC OS X
+	root.update()
+	th = threading.Thread(target=exit_after,args=(5,))
+	th.start()
+	root.mainloop()
+root.destroy()	
+
