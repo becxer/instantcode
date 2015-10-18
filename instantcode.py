@@ -106,14 +106,15 @@ print interpreted
 root.clipboard_clear()
 root.clipboard_append(interpreted)
 
-from sys import platform as _platform
-
+#to escape Tkinter's mainloop
 def exit_after(sec):
 	for i in xrange(0,sec):
 		print "exit() after " + str(sec - i) + " sec"
 		time.sleep(1)
 	os._exit(5)
 
+# MAC OS has to be wait until clipboard is used (I don't know why..)
+from sys import platform as _platform
 if _platform == "darwin":
 # MAC OS X
 	root.update()
