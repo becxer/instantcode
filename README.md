@@ -2,46 +2,54 @@
 Run the code which is in the clipboard and put result into clipboard
 
 
-### 1. how to use this
+### 1. How to use this
 
-after setting keyboard shortcut for run, 
+After setting keyboard shortcut for run, 
 you can just convert code instantly like below.
 
-        [ ctrl+c ]  #put your code to clipboard 
-        [ (your shorcut) ]  # convert your code to result
-        [ ctrl+v ]  #paste your code result  
+        [ ctrl+c ]  #Put your code to clipboard 
+        [ (your shorcut) ]  #Convert your code to result
+        [ ctrl+v ]  #Paste your code result  
 
-try these sample code : https://wiki.python.org/moin/SimplePrograms
+Try these sample code : https://wiki.python.org/moin/SimplePrograms
 
-### 2. how to pre-setting OS environment
+### 2. How to pre-setting OS environment
 
-#### window
-
-        if want to use python
+        If want to use python
         1) install python2.7.x (https://www.python.org/downloads/)
-        2) append python.exe's path into environment path
+        2) (window) append python.exe's path into environment path
         
-        if want to use win-c & win-cpp
+        If want to use win-c & win-cpp
         1) install visual_studio (https://www.visualstudio.com/)
         2) append cl.exe's path into environment path
         
-        if want to use nodejs
+        If want to use nodejs
         5) install nodejs (https://nodejs.org/en/download/)
         
-        if want to use ruby
+        If want to use ruby
         6) install ruby (https://www.ruby-lang.org/)
 
-### 3. how to install shortcut
+### 3. How to install shortcut
 
-#### window
+#### Window
 
-        1) clone this project or download.zip ( & unzip)
-        2) right click instantcode.py
-        3) make shortcut of instantcode.py on desktop
-        4) right click shortcut of instantcode.py
-        5) set keyboard shortcut to '(your shortcut)' & hide icon also
+        1) Clone this project or download.zip ( & unzip)
+        2) Right click instantcode.py
+        3) Make shortcut of instantcode.py on desktop (Must to be in desktop)
+        4) Right click shortcut of instantcode.py
+        5) Set keyboard shortcut to '(your shortcut)' & hide icon also
+        
+#### MacOSX
 
-### 4. how to change language
+        1) Clone this project or download.zip ( & unzip)
+        2) Launch automator and select service -> library -> "shell script"
+        3) Write shell code "python (path to instantcode)/instantcode.py"
+        4) Save automator service name "instantcode"
+        4) Go to system-preference -> keyboard -> shortcut -> service
+        5) Select "instantcode" & set keyboard shortcut to '(your shorcut)'
+        6) reboot 
+
+### 4. How to change language
 
 Just fix instantcode.ini with supported option below
 
