@@ -59,39 +59,29 @@ lang = ini_f.read().strip()
 ini_f.close()
 
 #write source to tmp file & interpret source file
-essential_pylib = u'''
+eslib = { \
+'python' : u'''
 #-*- coding=utf-8 -*-
 import sys
 import os
 import math
 import random
-'''
-essential_nodelib = u'''
+''',\
+'node' : u'''
 var fs = require('fs')
-'''
-essential_rblib = u'''
-'''
+''',\
+'ruby' : u'''
+'''\
+}
 
 src_fname = "instantcode.src"
 interpreted = 'Error'
-if lang == 'python':
-        src_f = codecs.open(src_fname,"w","utf-8")
-        src_f.write(essential_pylib)
-        src_f.write(src)
-        src_f.close()
-        interpreted = run_cmd('python ' + src_fname).decode(enc)
-elif lang == 'nodejs' or lang == 'node':
-        src_f = codecs.open(src_fname,"w","utf-8")
-        src_f.write(essential_nodelib)
-        src_f.write(src)
-        src_f.close()
-        interpreted = run_cmd('node ' + src_fname).decode(enc)
-elif lang == 'ruby' :
-        src_f = codecs.open(src_fname,"w","utf-8")
-        src_f.write(essential_rblib)
-        src_f.write(src)
-        src_f.close()
-        interpreted = run_cmd('ruby ' + src_fname).decode(enc)
+if lang in eslib.keys():
+	src_f = codecs.open(src_fname,"w", "utf-8")
+	src_f.write(eslib[lang])
+	src_f.write(src)
+	src_f.close()
+	interpreted = run_cmd(lang + ' ' + src_fname).decode(enc)
 elif lang == 'win-cpp' or lang == 'win-c' :
 	win_fname = src_fname + '.'+lang.split('-')[1]
 	src_f = codecs.open(win_fname,'w','utf-8')
@@ -99,6 +89,14 @@ elif lang == 'win-cpp' or lang == 'win-c' :
 	src_f.close()
 	print run_cmd('vcvars32 & cl ' + win_fname)
 	interpreted = run_cmd(src_fname+'.exe').decode(enc)
+elif lang == 'c' or lang == 'cpp':
+	compiler = {'c' : 'gcc' , 'cpp' : 'g++'}
+	gcc_fname = src_fname + '.'+lang
+	src_f = codecs.open(gcc_fname,'w','utf-8')
+	src_f.write(src)
+	src_f.close()
+	print run_cmd(compiler[lang]+' -o instance.src.o ' + gcc_fname)
+	interpreted = run_cmd('./instance.src.o').decode(enc)
 	
 #put result to clipboard
 print "______________________________________________"
