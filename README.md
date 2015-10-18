@@ -56,5 +56,7 @@ Just fix instantcode.ini with supported option below
         python
         win-cpp
         win-c
+		c		(gcc)
+		cpp		(g++)
         nodejs
         ruby
