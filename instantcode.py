@@ -31,30 +31,30 @@ print "______________________________________________"
 
 #run command in shell
 def run_cmd(bashCmd):
-	print "run command : " + str(bashCmd)
-	process = subprocess.Popen(bashCmd, shell=True 
-				,stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-	res = ''
-	while True:
-		output = process.stdout.readline()
-		if output == '' and process.poll() is not None:
-			break
-		if output:
-			res += output
-		rc = process.poll()
-	output, error = process.communicate()
+    print "run command : " + str(bashCmd)
+    process = subprocess.Popen(bashCmd, shell=True 
+                ,stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    res = ''
+    while True:
+        output = process.stdout.readline()
+        if output == '' and process.poll() is not None:
+            break
+        if output:
+            res += output
+        rc = process.poll()
+    output, error = process.communicate()
         res += error
-	return res
+    return res
 
 #ini file read
 ini_fname = "instantcode.ini"
 try:
-	ini_f = open(ini_fname,"r")
+    ini_f = open(ini_fname,"r")
 except IOError as e:
-	ini_f = open(ini_fname,"w")
-	ini_f.write("python")
-	ini_f.close()
-	ini_f = open(ini_fname,"r")
+    ini_f = open(ini_fname,"w")
+    ini_f.write("python")
+    ini_f.close()
+    ini_f = open(ini_fname,"r")
 lang = ini_f.read().strip()
 ini_f.close()
 
@@ -77,27 +77,27 @@ var fs = require('fs')
 src_fname = "instantcode.src"
 interpreted = 'Error'
 if lang in eslib.keys():
-	src_f = codecs.open(src_fname,"w", "utf-8")
-	src_f.write(eslib[lang])
-	src_f.write(src)
-	src_f.close()
-	interpreted = run_cmd(lang + ' ' + src_fname).decode(enc)
+    src_f = codecs.open(src_fname,"w", "utf-8")
+    src_f.write(eslib[lang])
+    src_f.write(src)
+    src_f.close()
+    interpreted = run_cmd(lang + ' ' + src_fname).decode(enc)
 elif lang == 'win-cpp' or lang == 'win-c' :
-	win_fname = src_fname + '.'+lang.split('-')[1]
-	src_f = codecs.open(win_fname,'w','utf-8')
-	src_f.write(src)
-	src_f.close()
-	print run_cmd('vcvars32 & cl ' + win_fname)
-	interpreted = run_cmd(src_fname+'.exe').decode(enc)
+    win_fname = src_fname + '.'+lang.split('-')[1]
+    src_f = codecs.open(win_fname,'w','utf-8')
+    src_f.write(src)
+    src_f.close()
+    print run_cmd('vcvars32 & cl ' + win_fname)
+    interpreted = run_cmd(src_fname+'.exe').decode(enc)
 elif lang == 'c' or lang == 'cpp':
-	compiler = {'c' : 'gcc' , 'cpp' : 'g++'}
-	gcc_fname = src_fname + '.'+lang
-	src_f = codecs.open(gcc_fname,'w','utf-8')
-	src_f.write(src)
-	src_f.close()
-	print run_cmd(compiler[lang]+' -o instance.src.o ' + gcc_fname)
-	interpreted = run_cmd('./instance.src.o').decode(enc)
-	
+    compiler = {'c' : 'gcc' , 'cpp' : 'g++'}
+    gcc_fname = src_fname + '.'+lang
+    src_f = codecs.open(gcc_fname,'w','utf-8')
+    src_f.write(src)
+    src_f.close()
+    print run_cmd(compiler[lang]+' -o instance.src.o ' + gcc_fname)
+    interpreted = run_cmd('./instance.src.o').decode(enc)
+    
 #put result to clipboard
 print "______________________________________________"
 print interpreted
@@ -106,18 +106,18 @@ root.clipboard_append(interpreted)
 
 #to escape Tkinter's mainloop
 def exit_after(sec):
-	for i in xrange(0,sec):
-		print "exit() after " + str(sec - i) + " sec"
-		time.sleep(1)
-	os._exit(5)
+    for i in xrange(0,sec):
+        print "exit() after " + str(sec - i) + " sec"
+        time.sleep(1)
+    os._exit(5)
 
 # MAC OS has to be wait until clipboard is used (I don't know why..)
 from sys import platform as _platform
 if _platform == "darwin":
 # MAC OS X
-	root.update()
-	th = threading.Thread(target=exit_after,args=(5,))
-	th.start()
-	root.mainloop()
-root.destroy()	
+    root.update()
+    th = threading.Thread(target=exit_after,args=(5,))
+    th.start()
+    root.mainloop()
+root.destroy()
 
