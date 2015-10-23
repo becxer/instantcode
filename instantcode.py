@@ -111,10 +111,9 @@ def exit_after(sec):
         time.sleep(1)
     os._exit(5)
 
-# MAC OS has to be wait until clipboard is used (I don't know why..)
+# MAC OS & Linux has to be wait until clipboard is used (I don't know why..)
 from sys import platform as _platform
-if _platform == "darwin":
-# MAC OS X
+if _platform == "darwin" or _platform == "linux2":
     root.update()
     th = threading.Thread(target=exit_after,args=(5,))
     th.start()

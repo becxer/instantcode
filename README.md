@@ -18,14 +18,13 @@ Try these sample code : https://wiki.python.org/moin/SimplePrograms
         If want to use python
         0) install python2.7.x (https://www.python.org/downloads/)
         1) (window) append python.exe's path into environment path
-        
+
         If want to use win-c & win-cpp
         0) install visual_studio (https://www.visualstudio.com/)
         1) append cl.exe's path into environment path
-        
+
         If want to use nodejs
         0) install nodejs (https://nodejs.org/en/download/)
-        
         If want to use ruby
         0) install ruby (https://www.ruby-lang.org/)
 
@@ -38,7 +37,7 @@ Try these sample code : https://wiki.python.org/moin/SimplePrograms
         2) Make shortcut of instantcode.py on desktop (Must to be in desktop)
         3) Right click shortcut of instantcode.py
         4) Set keyboard shortcut to '(your shortcut)' & hide icon also
-        
+
 #### MacOSX
 
         0) Clone this project or download.zip ( & unzip)
@@ -49,6 +48,12 @@ Try these sample code : https://wiki.python.org/moin/SimplePrograms
         5) Select "instantcode" & set keyboard shortcut to '(your shorcut)'
         6) reboot 
 
+#### Linux
+
+        0) Clone this project or download.zip ( & unzip)
+        1) Setting -> Keyboard -> shortcut
+        2) Set custom shortcut "python {your-path}/instantcode/instantcode.py"
+
 ### 3. How to change language
 
 Just fix instantcode.ini with supported option below
@@ -56,7 +61,7 @@ Just fix instantcode.ini with supported option below
         python
         win-cpp
         win-c
-		c		(gcc)
-		cpp		(g++)
+        c        (gcc)
+        cpp        (g++)
         nodejs
         ruby
