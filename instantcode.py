@@ -43,7 +43,7 @@ def run_cmd(bashCmd):
             res += output
         rc = process.poll()
     output, error = process.communicate()
-        res += error
+    res += error
     return res
 
 #ini file read
